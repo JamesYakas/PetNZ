@@ -3,27 +3,24 @@
 	border-style: solid;
 	border-width: 2px;
 	border-color: blue;
-	height: 130px;
+	height: 140px;
 	position: absolute;
 	overflow: auto;
 }
+.navCon{
+	border-style: solid;
+	border-width: 2px;
+	position: relative;
+	height: 65px;
+	left:1%;
+
+}
 #top{
 	width: 98%;
-	border-style: solid;
-	border-width: 2px;
-	position: relative;
-	height: 60px;
-	left:1%;
+
 }
 #bottom{
-	width: 98%;
-	border-style: solid;
-	border-width: 2px;
-	border-color: purple;
-	height: 60px;
-	left:1%;
-	position: relative;
-
+	width:88%;
 }
 #logo{
 	width: 50px;
@@ -58,7 +55,7 @@
 }
 #petSupplies{
 	border-color: orange;
-	left:34%;
+	left:35%;
 }
 #petServcies{
 	border-color: grey;
@@ -70,4 +67,7 @@
 	width: 31%;
 	top: 3px;
 	position:absolute;
+	height: 30px
+	overflow:auto;
+	text-align: center;
 }
