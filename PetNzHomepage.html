@@ -40,9 +40,167 @@
 		</div>
 		<!-- For James -->
 		<div id="filterCon">
+			<!-- Type of search -->
+			<input type="radio" name="category" id="categoryPets" onClick="selectCategory()"> Pets<br>
+			<input type="radio" name="category" id="categorySupplies" onClick="selectCategory()"> Supplies<br>
+			<input type="radio" name="category" id="categoryServices" onClick="selectCategory()"> Services<hr>
+			<!-- Pets -->
+			<div id="displayPetCategory">
+				<!--Initial query-->
+				<input type="checkbox" name="adopt" value="Adopt"> Adopt
+				<input type="checkbox" name="Purchase" value="Purchase"> Purchase<br><br>
+				Type of animal:<br>
+				<select id='selectAnimal' onClick="getBreed()">
+						<option value="cat">Cats</option>
+						<option value="dog">Dogs</option>
+						<option value="rat">Rats</option>
+						<option value="mice">Mice</option>
+				</select> <br><br>
+				Location:<br>
+				<select>
+						<option value="all">All</option>
+						<option value="auckland">Auckland</option>
+						<option value="hamilton">Hamilton</option>
+						<option value="wellington">Wellington</option>
+						<option value="christchurch">Christchurch</option>
+				</select><br><br>
+				Price (NZD)<br>
+				Min: <input type="text" size="2" name="minPrice"> Max:<input type="text" size="2" name="maxPrice"><hr>
+				<!--Refine search-->
+				<b>Refine</b><br>
+				<!-- Breed -->
+				Breed:<br>
+				<select id='selectBreed'>
+						<option value="default">Select an animal</option>
+						<!-- <option value="catb2">Catb2</option>
+						<option value="catb3">Catb3</option>
+						<option value="catb4">Catb4</option>
+						<option value="catb5">Catb5</option> -->
+				</select><hr>
+				<!-- Gender -->
+				Gender:<br>
+				<input type="radio" name="gender" value="male"> Male<br>
+				<input type="radio" name="gender" value="female"> Female<br><hr>
+				<!-- Size -->
+				Size:<br>
+				<select>
+						<option value="all">All</option>
+						<option value="small">Small</option>
+						<option value="medium">Medium</option>
+						<option value="large">Large</option>
+						<option value="extraLarge">Extra Large</option>
+				</select><hr>
+				<!-- Age -->
+				Age:<br>
+				<div id='displayAge'>10</div>
+				<input type="range" id="setAge" name="age" min="0" max="20" onchange="displayAge()"><hr>
+				<!-- Activity level -->
+				Activity level:<br>
+				<div id='displayActLvl'>50</div>
+				<input type="range" id="setActLvl" name="actLvl" min="0" max="100" onchange="displayActLvl()"><hr>
+			</div>
+			<!-- Supplies -->
+			<div id="displaySuppliesCategory">
+				Supplies
+			</div>
+			<!-- Services -->
+			<div id="displayServicesCategory">
+				Services
+			</div>
+			<!-- End of search function -->
 		</div>
 		<div id="footerCon">
 		</div>
+		<script>
+
+			//JAMES' FUNCTIONS
+			//Function to display the correct catagory(Pets/Supplies/Services)
+			function selectCategory(){
+				//Get radio buttons
+				var selectPets = document.getElementById('categoryPets') 
+				var selectSupplies = document.getElementById('categorySupplies')
+				var selectServices = document.getElementById('categoryServices')
+
+				// Div boxes to display associated sections 
+				var displayPetCategory = document.getElementById('displayPetCategory') 
+				var displaySuppliesCategory = document.getElementById('displaySuppliesCategory') 
+				var displayServicesCategory = document.getElementById('displayServicesCategory') 
+
+				// Display relevant div box depending on the radio button choosen
+				if(selectPets.checked){
+					console.log("Pets selected")
+					displayPetCategory.style.display="block"
+					displaySuppliesCategory.style.display="none"
+					displayServicesCategory.style.display="none"
+				}else if(selectSupplies.checked){
+					console.log("Supplies selected")
+					displayPetCategory.style.display="none"
+					displaySuppliesCategory.style.display="block"
+					displayServicesCategory.style.display="none"
+				}else if(selectServices.checked){
+					console.log("Services selected")
+					displayPetCategory.style.display="none"
+					displaySuppliesCategory.style.display="none"
+					displayServicesCategory.style.display="block"
+				}
+				// if(document.getElementById("categoryPets").checked){ 
+                //     alert("You selected red");
+                // }else if (document.getElementById("categorySupplies").checked){
+                //     alert("You selected blue");
+                // }	
+			}
+
+			//Function to display the possible breeds of an animal, based on the type of animal chosen.
+			function getBreed(){
+				var selectAnimal = document.getElementById('selectAnimal')
+				var displayBreed = document.getElementById('selectBreed')
+				var selectAnimalValue = selectAnimal.options[selectAnimal.selectedIndex].value;
+
+				if(selectAnimalValue=='cat'){
+					console.log("Display breed of Cat")
+					displayBreed.options.length=0;
+					displayBreed.options[0] = new Option('All', 'All');
+					displayBreed.options[1] = new Option('Catb1', 'Catb1');
+					displayBreed.options[2] = new Option('Catb2', 'Catb2');
+				}
+				else if (selectAnimalValue=='dog'){
+					console.log("Display breed of Dog")
+					displayBreed.options.length=0;
+					displayBreed.options[0] = new Option('All', 'All');
+					displayBreed.options[1] = new Option('Dogb1', 'Dogb1');
+					displayBreed.options[2] = new Option('Dogb2', 'Dogb2');
+				}else if (selectAnimalValue=='rat'){
+					console.log("Display breed of Rat")
+					displayBreed.options.length=0;
+					displayBreed.options[0] = new Option('All', 'All');
+					displayBreed.options[1] = new Option('Ratb1', 'Ratb1');
+					displayBreed.options[2] = new Option('Ratb2', 'Ratb2');
+				}				else if (selectAnimalValue=='mice'){
+					console.log("Display breed of Mice")
+					displayBreed.options.length=0;
+					displayBreed.options[0] = new Option('All', 'All');
+					displayBreed.options[1] = new Option('Miceb1', 'Miceb1');
+					displayBreed.options[2] = new Option('Miceb2', 'Miceb2');
+				}
+
+			}
+
+			//Function to display the age of an animal selected 
+			function displayAge(){
+				var displayAge = document.getElementById('displayAge')
+				var setAge = document.getElementById('setAge')
+				displayAge.innerHTML = setAge.value
+			}
+
+			//Function to display the activity level of an animal selected
+			function displayActLvl(){
+				var displayActLvl = document.getElementById('displayActLvl')
+				var setActLvl = document.getElementById('setActLvl')
+				displayActLvl.innerHTML = setActLvl.value
+			}
+
+		</script>
+		
 	</body>
 	
 </html>

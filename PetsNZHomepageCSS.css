@@ -83,3 +83,10 @@ body{
 	border-bottom-style:solid;
 	border-bottom-color:white;
 }
+#filterCon{
+	border-style: solid;
+	border-width: 2px;
+	border-color: blue;
+	position: absolute;
+	margin-top: 150px;
+}
