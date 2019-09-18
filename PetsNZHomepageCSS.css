@@ -94,7 +94,8 @@ body{
 .displayItem{
 	background-color: white;
 	width: 400px;
-	height: 300px;	
+	height: 250px;	
+	border-radius: 20px;	
 }
 
 #MainCon {
@@ -105,3 +106,13 @@ body{
 	height: 800px;
 	background-color: lightgreen
 }
+
+.petImage{
+	float:left;
+	width: 250px;
+	height: 200px;
+}
+.petIntro{
+	
+}
+
