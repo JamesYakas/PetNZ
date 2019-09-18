@@ -2,6 +2,8 @@
 
 	<head>
 		<link rel="stylesheet" type="text/css" href="PetsNZHomepageCSS.css">
+		<script type="text/JavaScript" src="PetNzJS.js"></script>
+		
 	</head>
 	<body>
 		<!-- For Tauriq -->
@@ -55,6 +57,106 @@
 			price range -->
 		
 		<div id="MainCon">
+		<table id="display">
+			<tr>
+				<td class="displayItem">
+					<img src="images/1.jpg" class="petImage">
+					<p class="petIntro">
+						Name: Jay <br>
+						Gender: Male	<br>					
+						Price:15<br>
+						Breed:Pug<br>
+						Age:3<br>
+						Location:Auckland	<br>	
+					</p>
+					<button type="button" style="width: 150px;float: right;margin-right: 10px;margin-bottom: 10px;" >Add to Cart</button>
+					
+				</td>
+				<td class="displayItem">
+				
+					<img src="images/2.jpg" class="petImage">
+					<p class="petIntro">
+						Name: Petty <br>
+						Gender: Female	<br>					
+						Price:200<br>
+						Breed:Beagle<br>
+						Age:2<br>
+						Location:Nelson	<br>	
+					</p>
+					<button type="button" style="width: 150px;float: right;margin-right: 10px;margin-bottom: 10px;" >Add to Cart</button>
+					
+					
+				</td>
+				<td class="displayItem">
+					
+					<img src="images/3.jpg" class="petImage">
+					<p class="petIntro">
+						Name: Poody <br>
+						Gender: Male	<br>					
+						Price:333<br>
+						Breed:Chihuahua<br>
+						Age:1<br>
+						Location:Auckland	<br>	
+					</p>
+					<button type="button" style="width: 150px;float: right;margin-right: 10px;margin-bottom: 10px;" >Add to Cart</button>
+					
+				</td>		
+				
+				
+			</tr>
+			<tr>
+				<td class="displayItem">
+					
+					<img src="images/4.jpg" class="petImage">
+					<p class="petIntro">
+						Name: Tommy <br>
+						Gender: Male	<br>					
+						Price:100<br>
+						Breed:Labarador<br>
+						Age:0.5<br>
+						Location:Hamilton	<br>	
+					</p>
+					<button type="button" style="width: 150px;float: right;margin-right: 10px;margin-bottom: 10px;" >Add to Cart</button>
+					
+				</td>
+				<td class="displayItem">
+					
+					<img src="images/5.jpg" class="petImage">
+					<p class="petIntro">
+						Name: Sassy <br>
+						Gender: Male	<br>					
+						Price:280<br>
+						Breed:Siamese<br>
+						Age:1<br>
+						Location:Auckland	<br>	
+					</p>
+					<button type="button" style="width: 150px;float: right;margin-right: 10px;margin-bottom: 10px;" >Add to Cart</button>
+					
+				</td>
+				<td class="displayItem">
+					
+					<img src="images/6.jpg" class="petImage">
+					<p class="petIntro">
+						Name: Samantha <br>
+						Gender: Female	<br>					
+						Price:100<br>
+						Breed:British Shorthair<br>
+						Age:4<br>
+						Location:Queenstown	<br>	
+					</p>
+					<button type="button" style="width: 150px;float: right;margin-right: 10px;margin-bottom: 10px;" >Add to Cart</button>
+					
+				</td>		
+				
+				
+			</tr>
+			
+			
+			
+			
+			
+			
+		</table>
 		</div>
 		<!-- For James -->
 		<div id="filterCon">
@@ -264,6 +366,33 @@
 				var setActLvl = document.getElementById('setActLvl')
 				displayActLvl.innerHTML = setActLvl.value
 			}
+			
+			function pet(name, price,gender, breed,age, location,image) {
+    				this.name = name;
+   					this.price = price;
+    				this.gender = gender;  
+    				this.breed = breed;
+					this.age = age;
+					this.location = location;
+					this.image = image;
+}// JavaScript Document
+
+var petList= new Array()
+
+
+var pet0= new pet("Jay","159","Male","Pug","3","Auckland","1")
+var pet1= new pet("Petty","200","Female","Beagle","2","Nelson","2")
+var pet2= new pet("Poody","333","Male","Chihuahua","1","Auckland","3")
+var pet3= new pet("Tommy","100","Male","Labarador","0.5","Hamilton","4")
+var pet4= new pet("Sassy","280","Male","Siamese","1","Auckland","5")
+var pet5= new pet("Samantha","100","Female","British Shorthair","4","Queenstown","6")
+
+petList[0]=pet0;
+petList[1]=pet1;
+petList[2]=pet2;
+petList[3]=pet3;
+petList[4]=pet4;
+petList[5]=pet5;
 
 			//Supplies filter
 			function getFood(){

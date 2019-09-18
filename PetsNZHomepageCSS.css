@@ -90,3 +90,29 @@ body{
 	position: absolute;
 	margin-top: 150px;
 }
+
+.displayItem{
+	background-color: white;
+	width: 400px;
+	height: 250px;	
+	border-radius: 20px;	
+}
+
+#MainCon {
+	position: absolute;
+	left:200px;
+	top: 150px;
+	width: 1200px;
+	height: 800px;
+	background-color: lightgreen
+}
+
+.petImage{
+	float:left;
+	width: 250px;
+	height: 200px;
+}
+.petIntro{
+	
+}
+
