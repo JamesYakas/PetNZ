@@ -46,11 +46,12 @@
 			<input type="radio" name="category" id="categoryServices" onClick="selectCategory()"> Services<hr> -->
 			<!-- Pets -->
 			<div id="displayPetCategory">
+				<b>Pets</b><br>
 				<!--Initial query-->
 				<input type="checkbox" name="adopt" value="Adopt"> Adopt
 				<input type="checkbox" name="Purchase" value="Purchase"> Purchase<br><br>
 				Type of animal:<br>
-				<select id='selectAnimal' onClick="getBreed()">
+				<select id='selectAnimalBreed' onClick="getBreed()">
 						<option value="cat">Cats</option>
 						<option value="dog">Dogs</option>
 						<option value="rat">Rats</option>
@@ -97,11 +98,26 @@
 			</div>
 			<!-- Supplies -->
 			<div id="displaySuppliesCategory" style="display: none;">
-				Supplies
+				<b>Supplies</b><br><br>
+				Type of animal:<br>
+				<select id='selectAnimalFood' onClick="getFood()">
+						<option value="cat">Cats</option>
+						<option value="dog">Dogs</option>
+						<option value="rat">Rats</option>
+						<option value="mice">Mice</option>
+				</select> <br><br>
+				<hr>
+				<b>Food</b><br>
+				Brand:<br>
+				<select id='selectFood'>
+						<option value="default">Select an animal</option>
+				</select><hr>
+				
+				
 			</div>
 			<!-- Services -->
 			<div id="displayServicesCategory" style="display: none;">
-				Services
+				<b>Services</b><br>
 			</div>
 			<!-- End of search function -->
 		</div>
@@ -109,6 +125,8 @@
 		</div>
 		<script>
 			//JAMES' FUNCTIONS
+
+			//Pet filter
 			//Function to display the pets search filter
 			function selectPets(){
 				// Div boxes to display associated sections 
@@ -182,7 +200,7 @@
 
 			//Function to display the possible breeds of an animal, based on the type of animal chosen.
 			function getBreed(){
-				var selectAnimal = document.getElementById('selectAnimal')
+				var selectAnimal = document.getElementById('selectAnimalBreed')
 				var displayBreed = document.getElementById('selectBreed')
 				var selectAnimalValue = selectAnimal.options[selectAnimal.selectedIndex].value;
 
@@ -227,6 +245,40 @@
 				var displayActLvl = document.getElementById('displayActLvl')
 				var setActLvl = document.getElementById('setActLvl')
 				displayActLvl.innerHTML = setActLvl.value
+			}
+
+			//Supplies filter
+			function getFood(){
+				var selectAnimal = document.getElementById('selectAnimalFood')
+				var displayFood = document.getElementById('selectFood')
+				var selectAnimalValue = selectAnimal.options[selectAnimal.selectedIndex].value;
+
+				if(selectAnimalValue=='cat'){
+					console.log("Display breed of Cat")
+					displayFood.options.length=0;
+					displayFood.options[0] = new Option('All', 'All');
+					displayFood.options[1] = new Option('Catf1', 'Catf1');
+					displayFood.options[2] = new Option('Catf2', 'Catf2');
+				}
+				else if (selectAnimalValue=='dog'){
+					console.log("Display breed of Dog")
+					displayFood.options.length=0;
+					displayFood.options[0] = new Option('All', 'All');
+					displayFood.options[1] = new Option('Dogf1', 'Dogf1');
+					displayFood.options[2] = new Option('Dogf2', 'Dogf2');
+				}else if (selectAnimalValue=='rat'){
+					console.log("Display breed of Rat")
+					displayFood.options.length=0;
+					displayFood.options[0] = new Option('All', 'All');
+					displayFood.options[1] = new Option('Ratf1', 'Ratf1');
+					displayFood.options[2] = new Option('Ratf2', 'Ratf2');
+				}else if (selectAnimalValue=='mice'){
+					console.log("Display breed of Mice")
+					displayFood.options.length=0;
+					displayFood.options[0] = new Option('All', 'All');
+					displayFood.options[1] = new Option('Micef1', 'Micef1');
+					displayFood.options[2] = new Option('Micef2', 'Micebf2');
+				}
 			}
 
 		</script>
