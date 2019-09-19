@@ -13,13 +13,17 @@
 					<img src="images/Petsnz.jpg"alt="Petsnz" width="50px" height="50px">
 				</div>
 				<div id="Login">
+					<button class="logReg"><a href="" class="login">Login</a></button>
+					<button class="logReg">Register</button>
 				</div>
 				<div id="search">
+					<input type="text" id="searchBox" name="searchTextbox" placeholder="Search for what you need..">
 				</div>
 			</div>
 			<div id="bottom" class="navCon">
 				<div id="navigation">
 					<div id="pets" class="navigation">
+<<<<<<< HEAD
 						<button class="navigationBtn1" onClick="selectPets()">Pets</button>
 					</div>
 					<div id="petSupplies" class="navigation" onClick="selectSupplies()">
@@ -27,6 +31,15 @@
 					</div>
 					<div id="petServcies" class="navigation" onClick="selectServices()">
 						<button class="navigationBtn3">Pet Services</button>
+=======
+						<button class="navigationBtn" onClick="selectPets()" id="petsBtn">Pets</button>
+					</div>
+					<div id="petSupplies" class="navigation"  >
+						<button class="navigationBtn" onClick="selectSupplies()" id="suppliesBtn">Pet Supplies</button>
+					</div>
+					<div id="petServcies" class="navigation" >
+						<button class="navigationBtn" onClick="selectServices()" id="servicesBtn">Pet Services</button>
+>>>>>>> 9aee7e4af1d9f7d4d12e2ab00f80ded36e2a5e54
 					</div>
 				</div>
 				<div id="account">
@@ -160,11 +173,9 @@
 		</div>
 		<!-- For James -->
 		<div id="filterCon">
-			<!-- Type of search -->
-			<!-- <input type="radio" name="category" id="categoryPets" checked="checked" onClick="selectCategory()"> Pets<br>
-			<input type="radio" name="category" id="categorySupplies" onClick="selectCategory()"> Supplies<br>
-			<input type="radio" name="category" id="categoryServices" onClick="selectCategory()"> Services<hr> -->
-			<!-- Pets -->
+			<!-- Filter -->
+			<h3>Filter</h3>
+			<!-- Pets Filter -->
 			<div id="displayPetCategory">
 				<b>Pets</b><br>
 				<!--Initial query-->
@@ -172,6 +183,7 @@
 				<input type="checkbox" name="Purchase" value="Purchase"> Purchase<br><br>
 				Type of animal:<br>
 				<select id='selectAnimalBreed' onClick="getBreed()">
+						<option value="default">All</option>
 						<option value="cat">Cats</option>
 						<option value="dog">Dogs</option>
 						<option value="rat">Rats</option>
@@ -216,7 +228,7 @@
 				<div id='displayActLvl'>50</div>
 				<input type="range" id="setActLvl" name="actLvl" min="0" max="100" onchange="displayActLvl()"><hr>
 			</div>
-			<!-- Supplies -->
+			<!-- Supplies Filter -->
 			<div id="displaySuppliesCategory" style="display: none;">
 				<b>Supplies</b><br><br>
 				Type of animal:<br>
@@ -231,142 +243,18 @@
 				Brand:<br>
 				<select id='selectFood'>
 						<option value="default">Select an animal</option>
-				</select><hr>
-				
-				
+				</select><hr>	
 			</div>
-			<!-- Services -->
+			<!-- Services Filter -->
 			<div id="displayServicesCategory" style="display: none;">
 				<b>Services</b><br>
 			</div>
-			<!-- End of search function -->
+			<!-- End of search filter -->
 		</div>
 		<div id="footerCon">
 		</div>
 		<script>
-			//JAMES' FUNCTIONS
-
-			//Pet filter
-			//Function to display the pets search filter
-			function selectPets(){
-				// Div boxes to display associated sections 
-				var displayPetCategory = document.getElementById('displayPetCategory') 
-				var displaySuppliesCategory = document.getElementById('displaySuppliesCategory') 
-				var displayServicesCategory = document.getElementById('displayServicesCategory') 
-
-				displayPetCategory.style.display="block"
-				displaySuppliesCategory.style.display="none"
-				displayServicesCategory.style.display="none"
-			}
-
-			//Function to display the supplies search filter
-			function selectSupplies(){
-				// Div boxes to display associated sections 
-				var displayPetCategory = document.getElementById('displayPetCategory') 
-				var displaySuppliesCategory = document.getElementById('displaySuppliesCategory') 
-				var displayServicesCategory = document.getElementById('displayServicesCategory') 
-
-				displayPetCategory.style.display="none"
-				displaySuppliesCategory.style.display="block"
-				displayServicesCategory.style.display="none"
-			}
-
-			//Function to display the services search filter
-			function selectServices(){
-				// Div boxes to display associated sections 
-				var displayPetCategory = document.getElementById('displayPetCategory') 
-				var displaySuppliesCategory = document.getElementById('displaySuppliesCategory') 
-				var displayServicesCategory = document.getElementById('displayServicesCategory') 
-
-				displayPetCategory.style.display="none"
-				displaySuppliesCategory.style.display="none"
-				displayServicesCategory.style.display="block"
-			}
-			//Function to display the correct catagory(Pets/Supplies/Services)
-			// function selectCategory(){
-			// 	//Get radio buttons
-			// 	var selectPets = document.getElementById('categoryPets') 
-			// 	var selectSupplies = document.getElementById('categorySupplies')
-			// 	var selectServices = document.getElementById('categoryServices')
-
-			// 	// Div boxes to display associated sections 
-			// 	var displayPetCategory = document.getElementById('displayPetCategory') 
-			// 	var displaySuppliesCategory = document.getElementById('displaySuppliesCategory') 
-			// 	var displayServicesCategory = document.getElementById('displayServicesCategory') 
-
-			// 	// Display relevant div box depending on the radio button choosen
-			// 	if(selectPets.clicked){
-			// 		console.log("Pets selected")
-			// 		displayPetCategory.style.display="block"
-			// 		displaySuppliesCategory.style.display="none"
-			// 		displayServicesCategory.style.display="none"
-			// 	}else if(selectSupplies.clicked){
-			// 		console.log("Supplies selected")
-			// 		displayPetCategory.style.display="none"
-			// 		displaySuppliesCategory.style.display="block"
-			// 		displayServicesCategory.style.display="none"
-			// 	}else if(selectServices.clicked){
-			// 		console.log("Services selected")
-			// 		displayPetCategory.style.display="none"
-			// 		displaySuppliesCategory.style.display="none"
-			// 		displayServicesCategory.style.display="block"
-			// 	}
-			// 	// if(document.getElementById("categoryPets").checked){ 
-            //     //     alert("You selected red");
-            //     // }else if (document.getElementById("categorySupplies").checked){
-            //     //     alert("You selected blue");
-            //     // }	
-			// }
-
-			//Function to display the possible breeds of an animal, based on the type of animal chosen.
-			function getBreed(){
-				var selectAnimal = document.getElementById('selectAnimalBreed')
-				var displayBreed = document.getElementById('selectBreed')
-				var selectAnimalValue = selectAnimal.options[selectAnimal.selectedIndex].value;
-
-				if(selectAnimalValue=='cat'){
-					console.log("Display breed of Cat")
-					displayBreed.options.length=0;
-					displayBreed.options[0] = new Option('All', 'All');
-					displayBreed.options[1] = new Option('Catb1', 'Catb1');
-					displayBreed.options[2] = new Option('Catb2', 'Catb2');
-				}
-				else if (selectAnimalValue=='dog'){
-					console.log("Display breed of Dog")
-					displayBreed.options.length=0;
-					displayBreed.options[0] = new Option('All', 'All');
-					displayBreed.options[1] = new Option('Dogb1', 'Dogb1');
-					displayBreed.options[2] = new Option('Dogb2', 'Dogb2');
-				}else if (selectAnimalValue=='rat'){
-					console.log("Display breed of Rat")
-					displayBreed.options.length=0;
-					displayBreed.options[0] = new Option('All', 'All');
-					displayBreed.options[1] = new Option('Ratb1', 'Ratb1');
-					displayBreed.options[2] = new Option('Ratb2', 'Ratb2');
-				}				else if (selectAnimalValue=='mice'){
-					console.log("Display breed of Mice")
-					displayBreed.options.length=0;
-					displayBreed.options[0] = new Option('All', 'All');
-					displayBreed.options[1] = new Option('Miceb1', 'Miceb1');
-					displayBreed.options[2] = new Option('Miceb2', 'Miceb2');
-				}
-
-			}
-
-			//Function to display the age of an animal selected 
-			function displayAge(){
-				var displayAge = document.getElementById('displayAge')
-				var setAge = document.getElementById('setAge')
-				displayAge.innerHTML = setAge.value
-			}
-
-			//Function to display the activity level of an animal selected
-			function displayActLvl(){
-				var displayActLvl = document.getElementById('displayActLvl')
-				var setActLvl = document.getElementById('setActLvl')
-				displayActLvl.innerHTML = setActLvl.value
-			}
-			
+			//RICK'S FUNCTIONS
 			function pet(name, price,gender, breed,age, location,image) {
     				this.name = name;
    					this.price = price;
@@ -393,41 +281,6 @@ petList[2]=pet2;
 petList[3]=pet3;
 petList[4]=pet4;
 petList[5]=pet5;
-
-			//Supplies filter
-			function getFood(){
-				var selectAnimal = document.getElementById('selectAnimalFood')
-				var displayFood = document.getElementById('selectFood')
-				var selectAnimalValue = selectAnimal.options[selectAnimal.selectedIndex].value;
-
-				if(selectAnimalValue=='cat'){
-					console.log("Display breed of Cat")
-					displayFood.options.length=0;
-					displayFood.options[0] = new Option('All', 'All');
-					displayFood.options[1] = new Option('Catf1', 'Catf1');
-					displayFood.options[2] = new Option('Catf2', 'Catf2');
-				}
-				else if (selectAnimalValue=='dog'){
-					console.log("Display breed of Dog")
-					displayFood.options.length=0;
-					displayFood.options[0] = new Option('All', 'All');
-					displayFood.options[1] = new Option('Dogf1', 'Dogf1');
-					displayFood.options[2] = new Option('Dogf2', 'Dogf2');
-				}else if (selectAnimalValue=='rat'){
-					console.log("Display breed of Rat")
-					displayFood.options.length=0;
-					displayFood.options[0] = new Option('All', 'All');
-					displayFood.options[1] = new Option('Ratf1', 'Ratf1');
-					displayFood.options[2] = new Option('Ratf2', 'Ratf2');
-				}else if (selectAnimalValue=='mice'){
-					console.log("Display breed of Mice")
-					displayFood.options.length=0;
-					displayFood.options[0] = new Option('All', 'All');
-					displayFood.options[1] = new Option('Micef1', 'Micef1');
-					displayFood.options[2] = new Option('Micef2', 'Micebf2');
-				}
-			}
-
 		</script>
 		
 	</body>
