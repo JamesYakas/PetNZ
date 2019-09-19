@@ -4,13 +4,9 @@ body{
     }
 #topCon{
 	width: 100%;
-	border-style: solid;
-	border-width: 2px;
-	border-color: blue;
 	height: 140px;
-	position: absolute;
-	overflow: auto;
-	background: linear-gradient(0deg, rgba(248,248,248,1) 0%, rgba(243,243,243,1) 40%, rgba(0,212,255,1) 100%);
+	position: relative;
+	box-shadow: -5px 3px 8px grey;
 	}
 .navCon{
 	border:none;
@@ -27,26 +23,18 @@ body{
 }
 #logo{
 	width: 50px;
-	border-style: solid;
-	border-width: 2px;
-	border-color: green;
 	height: 80%;
 	position: absolute;
 }
 #search{
 	width: 55%;
-	border-style: solid;
-	border-width: 2px;
-	border-color: red;
 	height: 30%;
 	position: absolute;
 	left: 20%;
 	top: 20px;
 }
 #Login{
-	border-style: solid;
-	border-width: 2px;
-	border-color: yellow;
+
 	height: 50%;
 	width: 18%;
 	left: 80%;
@@ -67,28 +55,29 @@ body{
 	top: 3px;
 	position:absolute;
 	height: 30px;
-
 	text-align: center;
 }
 .navigationBtn{
 	border:none;
 	width:100%;
-	background-color: #94f1ff;
+	background-color: #68b8f2;
 	text-align: center;
 	text-decoration: none;
 	padding:5px 20px;
 	font-size:15px;
-	border-right-style: solid;
-	border-right-color:white;
-	border-bottom-style:solid;
-	border-bottom-color:white;
+	box-shadow: 3px 3px 5px grey;
+	border-radius: 4px;
+	color:white;
+}
+.navigationBtn:hover{
+	background-color: #2ea0f2;
 }
 #filterCon{
 	border-style: solid;
 	border-width: 2px;
 	border-color: blue;
 	position: absolute;
-	margin-top: 150px;
+	margin-top: 80px;
 }
 
 .displayItem{
@@ -116,3 +105,16 @@ body{
 	
 }
 
+.logreg{
+	border:none;
+	background-color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size:15px;
+	box-shadow: -1px 3px 9px grey;
+	border-radius: 4px;
+}
+#searchBox{
+	width:100%;
+	height:30px;
+}

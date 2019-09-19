@@ -13,17 +13,20 @@
 					<img src="images/Petsnz.jpg"alt="Petsnz" width="50px" height="50px">
 				</div>
 				<div id="Login">
+					<button class="logReg">Login</button>
+					<button class="logReg">Register</button>
 				</div>
 				<div id="search">
+					<input type="text" id="searchBox" name="searchTextbox" placeholder="Search for what you need..">
 				</div>
 			</div>
 			<div id="bottom" class="navCon">
 				<div id="navigation">
 					<div id="pets" class="navigation">
-						<button class="navigationBtn" onClick="selectPets()">Pets</button>
+						<button class="navigationBtn" onClick="selectPets()" id="petsBtn">Pets</button>
 					</div>
-					<div id="petSupplies" class="navigation" onClick="selectSupplies()">
-						<button class="navigationBtn">Pet Supplies</button>
+					<div id="petSupplies" class="navigation"  >
+						<button class="navigationBtn" onClick="selectSupplies()">Pet Supplies</button>
 					</div>
 					<div id="petServcies" class="navigation" onClick="selectServices()">
 						<button class="navigationBtn">Pet Services</button>
