@@ -13,7 +13,7 @@
 					<img src="images/Petsnz.jpg"alt="Petsnz" width="50px" height="50px">
 				</div>
 				<div id="Login">
-					<button class="logReg">Login</button>
+					<button class="logReg"><a href="" class="login">Login</a></button>
 					<button class="logReg">Register</button>
 				</div>
 				<div id="search">
@@ -26,10 +26,10 @@
 						<button class="navigationBtn" onClick="selectPets()" id="petsBtn">Pets</button>
 					</div>
 					<div id="petSupplies" class="navigation"  >
-						<button class="navigationBtn" onClick="selectSupplies()">Pet Supplies</button>
+						<button class="navigationBtn" onClick="selectSupplies()" id="suppliesBtn">Pet Supplies</button>
 					</div>
-					<div id="petServcies" class="navigation" onClick="selectServices()">
-						<button class="navigationBtn">Pet Services</button>
+					<div id="petServcies" class="navigation" >
+						<button class="navigationBtn" onClick="selectServices()" id="servicesBtn">Pet Services</button>
 					</div>
 				</div>
 				<div id="account">
@@ -252,11 +252,14 @@
 			//Pet filter
 			//Function to display the pets search filter
 			function selectPets(){
+				//Bottom border change to show which menu is currently displaying
+				document.getElementById('petsBtn').style.borderBottom="1px solid white";
+				document.getElementById('suppliesBtn').style.borderBottom="none";		
+				document.getElementById('servicesBtn').style.borderBottom="none";				
 				// Div boxes to display associated sections 
 				var displayPetCategory = document.getElementById('displayPetCategory') 
 				var displaySuppliesCategory = document.getElementById('displaySuppliesCategory') 
 				var displayServicesCategory = document.getElementById('displayServicesCategory') 
-
 				displayPetCategory.style.display="block"
 				displaySuppliesCategory.style.display="none"
 				displayServicesCategory.style.display="none"
@@ -264,6 +267,10 @@
 
 			//Function to display the supplies search filter
 			function selectSupplies(){
+				//Bottom border change to show which menu is currently displaying
+				document.getElementById('suppliesBtn').style.borderBottom="1px solid white";
+				document.getElementById('petsBtn').style.borderBottom="none";
+				document.getElementById('servicesBtn').style.borderBottom="none";				
 				// Div boxes to display associated sections 
 				var displayPetCategory = document.getElementById('displayPetCategory') 
 				var displaySuppliesCategory = document.getElementById('displaySuppliesCategory') 
@@ -276,6 +283,11 @@
 
 			//Function to display the services search filter
 			function selectServices(){
+				//Bottom border change to show which menu is currently displaying
+				document.getElementById('servicesBtn').style.borderBottom="1px solid white";		
+				document.getElementById('suppliesBtn').style.borderBottom="none";	
+				document.getElementById('petsBtn').style.borderBottom="none";		
+				
 				// Div boxes to display associated sections 
 				var displayPetCategory = document.getElementById('displayPetCategory') 
 				var displaySuppliesCategory = document.getElementById('displaySuppliesCategory') 
